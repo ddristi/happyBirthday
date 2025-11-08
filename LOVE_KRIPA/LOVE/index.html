@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happiest Birthday</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <TITLE> HTML AUDIO</TITLE>
+   
+</head>
+
+<body>
+    
+
+    <div id="particles-js"></div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    <div class="petals" id="petalsContainer"></div>
+    
+    
+    <div class="container">
+        <div class="progress-bar">
+            <div class="progress" id="progressBar"></div>
+        </div>
+
+        <!-- Step 1: Greeting -->
+        <div class="step" id="step1">
+            <h1>Happy Birthday, Love!</h1>
+            <p>What's more blissful than celebrating the day...the reason for my happiness...was born!!</p>
+            <p>TOGETHER..LET US START CELEBRATING!</p>
+            <img src="https://png.pngtree.com/png-vector/20250422/ourmid/pngtree-cute-girl-holding-birthday-cake-smiling-cheerfully-png-image_16067658.png" style="height: 200px;width: 200px;" alt="">
+            <button class="btn" onclick="nextStep()">CLICK ME</button>
+        </div>
+
+        <!-- Step 2: Name Input -->
+        <div class="step" id="step2">
+            <h2>Let's Test You First!</h2>
+            <p>What is the name I love to call you the most?</p>
+            <input type="text" class="name-input" id="nameInput" placeholder="Chalo Batao Batao!!">
+            <button class="btn" onclick="saveName()">Answer It Correct & Come With ME</button>
+        </div>
+
+        <!-- Step 3: Heart Animation -->
+        <div class="step" id="step3">
+            <h2>It's Always You....I Want To Spend Every Moment Of My Life With...My <span id="displayName">Shonaa..</span></h2>
+
+            <p>Tap My Heart!</p>
+            
+            <div class="heart" id="interactiveHeart" onclick="createHearts()"></div>
+            <div id="heartMessage" class="message-box">
+                <p>Pta Hai?????....Every beat of my heart whispers your name🫣 <span id="heartName">my love</span>.</p>
+            </div>
+            <button class="btn" onclick="nextStep()">LET'S MOVE AHEAD</button>
+        </div>
+
+        <!-- Step 4: Birthday Message -->
+        <div class="step" id="step4">
+            <h2>SOMETHING I WANT YOU TO KNOW.....</h2>
+            <div class="photo-frame">
+                <!-- Replace with your image path -->
+                <img src="w.jpg" alt="Beautiful Us">
+            </div>
+            <div id="typedMessage" class="message-box">
+                <p class="typing-effect" id="typingText"></p>
+            </div>
+            <button class="btn" onclick="nextStep()">Ab...AAGE BADHTE HAI</button>
+        </div>
+
+        <!-- Step 5: Memory Lane -->
+        <div class="step" id="step5">
+            <h2>Our Special Moments!!</h2>
+            <p>Some memories I'll cherish forever...</p>
+            <div class="memory-container">
+                <div class="polaroid">
+                    <img src="b.jpg" alt="Memory 1">
+                    <div class="polaroid-caption">YOU + ME = Perfect!😘</div>
+                </div>
+
+                <div class="polaroid">
+                    <img src="d.jpg" alt="Memory 3">
+                    <div class="polaroid-caption">US- My Favorite Story!🖋</div>
+                </div>
+                <div class="polaroid">
+                    <img src="c.jpg" alt="Memory 2">
+                    <div class="polaroid-caption">The Reason I Smile More_Lately😌</div>
+                </div>
+                
+                
+                <div class="polaroid">
+                    <img src="f.jpg" alt="Memory 5">
+                    <div class="polaroid-caption">Just Stay & Be My Last</div>
+                </div>
+                
+                <div class="polaroid">
+                    <img src="g.jpg" alt="Memory 6">
+                    <div class="polaroid-caption">World Changes When Our Eyes Meet..🌏</div>
+                </div>
+                <div class="polaroid">
+                    <img src="h.jpg" alt="Memory 7">
+                    <div class="polaroid-caption">My Safe Place💞</div>
+                </div>
+                
+               
+            </div>
+            <button class="btn" onclick="nextStep()">NEXT??</button>
+        </div>
+
+        <!-- Step 6: Final Wish -->
+        <div class="step" id="step6">
+            <h1>🎉 Happy Birthday, <span id="finalName">Dhiraj💖</span>! 🎂</h1>
+        
+            <p>✨ Happiestttt Birthdayyy To The Most Incredible Man Of My Life..✨</p>
+            <p>🌟 You light up my world just by being in it — like a million stars in my sky. 🌌</p>
+            <p> I'm so proud of the person you are and the amazing things you've accomplished</p>
+        
+            <p>⏳ Counting every moment until I can hold you and celebrate this magical day together! 🥰</p>
+        
+            <p>💌 I LOVE YOU 💫</p>
+        
+            <div class="signature">Yours forever, Kripaa!</div>
+        
+            <!-- <div class="social-share">
+                <div class="social-icon" onclick="shareOnSocial('facebook')" title="Share on Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="social-icon" onclick="shareOnSocial('twitter')" title="Share on Twitter">
+                    <i class="fab fa-twitter"></i>
+                </div>
+                <div class="social-icon" onclick="shareOnSocial('whatsapp')" title="Share on WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+            </div> -->
+        </div>
+        
+    </div>
+    
+    <audio autoplay looped controls playsinline><source src="https://files.catbox.moe/uo6l6j.mp3" type="audio/mpeg"> </audio>
+
+    <script>
+  window.addEventListener("click", () => {
+    const audio = document.getElementById("bgm");
+    audio.muted = false;
+    audio.play();
+  });
+</script>
+
+<style>
+  audio {
+    display: none;
+  }
+</style>
+
+  <script src="script.js"></script>
+</body>
+</html>
